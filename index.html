@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Control Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <nav class="sidebar">
+      <div class="logo">CONTROL</div>
+      <a href="#" class="nav-item active">Dashboard</a>
+      <a href="#" class="nav-item">Schedule</a>
+      <a href="#" class="nav-item">Alerts</a>
+      <a href="#" class="nav-item">Maintenance</a>
+    </nav>
+    <main class="main">
+      <header class="top-bar">
+        <h1>Machine Control</h1>
+        <div class="status-badge online">Connected</div>
+      </header>
+      <div class="content">
+        <div class="card">
+          <h3>Power</h3>
+          <button id="power" class="toggle on">ON</button>
+        </div>
+        <div class="card">
+          <h3>TiO₂ Conversion</h3>
+          <div class="metric" id="tio2">94.2%</div>
+        </div>
+        <div class="card">
+          <h3>Uptime</h3>
+          <div class="metric">99.8%</div>
+        </div>
+        <div class="card">
+          <h3>Filter Status</h3>
+          <div class="progress">
+            <div class="bar" style="width:85%"></div>
+          </div>
+          <small>85% - Replace soon</small>
+        </div>
+        <div class="card wide">
+          <h3>Schedule Operations</h3>
+          <input type="time" id="startTime" value="08:00">
+          <input type="time" id="endTime" value="18:00">
+          <button class="btn" onclick="saveSchedule()">Save Schedule</button>
+          <div class="schedule-info">Mon-Fri: 08:00 - 18:00</div>
+        </div>
+        <div class="card wide">
+          <h3>Predictive Maintenance</h3>
+          <p>Next service: 7 days</p>
+          <p>Filter life: 15% remaining</p>
+          <p>Catalyst health: Excellent</p>
+          <button class="btn" onclick="requestService()">Request Service</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
